@@ -1,0 +1,31 @@
+
+.wrapper{
+  display:block;
+  border:solid black 2px;
+}
+
+img{
+  display:block;
+  margin:0 auto;
+}
+
+nav{
+  margin:0 auto;
+  border:solid black 1px;
+  width:75%;
+}
+
+li{
+  display:inline;
+  width:20%;
+}
+
+li a{
+  display:inline-block;
+  width:30%;
+  text-align: center;
+}
+
+
+
+
