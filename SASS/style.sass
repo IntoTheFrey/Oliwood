@@ -1,0 +1,135 @@
+
+@charset "UTF-8";
+
+ 
+* {
+   border: 1px solid red !important;
+}
+
+$font-main:sans-serif;
+$menu-font-size: 1.3em;
+$bullet: "\2022";
+  
+
+.wrapper{
+  display: block;
+  border: solid black 2px;
+}
+.page1{
+    height: 81vw;
+  min-height: 600px;
+  }
+
+.logo{
+  float: left;
+  padding: 40px 40px 30px 50px;
+}
+
+.logo img{
+  width: 40vw;
+}
+
+.bookNowContact{
+  float: left;
+  font-family: $font-main;
+  font-size: 2.4vw;
+  font-weight: bold;
+  margin: 60px 8vw;
+}
+.bookNow{
+  margin-bottom: 15px;
+}
+
+.email{
+  font-size: .7em;
+}
+    
+img{
+  display: inline;
+  margin: 0 auto;
+}
+    
+.heroMain{
+  
+}
+.whiteImgOverText{
+  font-size: 3vw;
+  line-height: 1.6em;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  top: -40vw;
+  left: 13vw;
+}
+
+.posAboutWhiteImgOverText{
+  top:-27vw;
+  left:69vw;
+  }
+  
+nav{
+  float: left;
+  margin: 0 auto;
+  width: 100%;
+  background-color: rgba(220,229,223,1);
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+}
+
+li{
+  display:inline;
+  width: 19%;
+  padding: 0;
+  margin: 0;
+}
+
+li a,
+.subNav{
+  font-family: $font-main;
+  font-weight: bold;
+  font-size: 1.3em;
+  color: rgba(60,49,41,1);
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 19%;
+  text-align: center;
+  height: 53px;
+  padding-top: 17px;
+}
+
+li a:hover,
+li a:active,
+li a:focus{
+  background-color: rgba(217,210,187,1);
+}
+
+.geoTagline{
+  font-family: $font-main;
+  font-size: 2.1vw;
+  word-spacing: .1em;
+  letter-spacing: .1em;
+  clear: both;
+  position: relative;
+  top: .8vw;
+  left: 3vw;
+  height: 0;
+  margin: 0;
+}
+
+.heroBullet::before{  
+  content: $bullet;
+}
+
+.subNav{
+  width: 100%;
+  clear: both;
+  font-family: $font-main;
+  font-weight: bold;
+  font-size: $menu-font-size;
+  background-color: rgba(220,229,223,1);
+  text-align: center;
+}

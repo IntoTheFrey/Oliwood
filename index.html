@@ -15,6 +15,7 @@
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
+  <link rel="stylesheet" href="css/resets.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -23,20 +24,57 @@
 
 <body>
 <main class="wrapper">
-  
-  <img src="img/P1000752.JPG" width="60%">
-  
-  <nav>
-   <ul>
-    <li><a href="js\fullcalendar-2.2.7\fullcalendar-2.2.7\demos\basic-views.html">Rates and Booking</a></li>
-    <li><a href="">Gallery</a></li>
-    <li><a href="">Attractions</a></li>
+  <div class="page1">
+    <div class="logo"><img src="img/Oliwood_logo_playful.png"></div>
+    <div class="bookNowContact">
+      <div class="bookNow">Book Now</div>
+      <div class="phone">403 394 3830</div>
+      <div class="email">oliwood@telusplanet.ca</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="">Amenities</a></li>
+        <li><a href="">Location</a></li>
+        <li><a href="/js/fullcalendar-2.2.7/fullcalendar-2.2.7/demos/basic.html">Calendar</a></li>
+        <li><a href="">Rates</a></li>
+      </ul>
+    </nav>
+    <p class="geoTagline">Located in beautiful Crowsnest Pass, Alberta, in the Canadian Rockies.</p>
+    <img class="heroMain" src="img/TurtleFromEast.jpg" width="100%">
+  <div class="whiteImgOverText">
+    <div>Private Mountain Retreat</div>
+    <div class="heroBullet">Sleeps up to 10</div>
+    <div class="heroBullet">Large Hot Tub</div>
+    <div class="heroBullet">Cable & WiFi</div>
+  </div>
+  </div>
+  <article>
+    <div class="subNav" id="about">About</div>
+
+    <h2>Comfortable mountainside cottage with incredible views of the Crowsnest Pass!</h2>
+    <p>Enjoy all the Crowsnest Pass has to offer! Spring, summer, fall or winter there is always something to do in this fantastic area: hiking, quad-riding, bird watching, golfing, and the best fly fishing in the world. In winter, alpine, cross-country skiing, and snowmobiling. The house is cozy in winter with in-floor hot water heating. After a day of play in the great outdoors, curl up in front of the gas fireplace with a hot cocoa or languish in the luxurious hot-tub. It is located on the morning side of Turtle Mountain in the beautiful Crowsnest Pass.</p>
+
+    <div class="bannerHeader">Amazing outdoor recreation opportunities</div>
+    <h2>Skiing &bull; Skidooing &bull; Hiking &bull; Birdwatching</h2>
     
-   </ul>
-  </nav>
+    <img class="imgAbout" src="img/Hottub1.jpg" width="100%">
+  <div class="whiteImgOverText posAboutWhiteImgOverText">
+    <div>Party Hot Tub</div>
+    <div>Seats Up To 7</div>
+  </div>
+  </article> 
+  <div class="subNav" id="amenities">Facilities & Amenities</div>
+  <div class="subNav" id="location">Location</div>
+  <div class="subNav" id="calendar">Calendar</div>
+  <div class="subNav" id="rates">Rates</div>
+  
+  
   
 </main>
   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
 </body>
 
 </html>
