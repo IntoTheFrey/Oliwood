@@ -1,0 +1,20 @@
+
+/*
+* {
+   border: 1px solid red !important;
+}
+*/
+
+
+
+.logo img{
+  width: 40vw;
+}
+
+.bookNowContact{
+  font-family: sans-serif;
+  font-size: 2vw;
+  font-weight: bold;
+  margin: 4.5vw 8vw;
+}
+
