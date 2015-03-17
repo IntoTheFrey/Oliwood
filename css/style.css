@@ -20,18 +20,23 @@
 /*              General                      */
 /* ==========================================*/
 html {
+  font: normal 400 1em/1.5 "Open Sans", sans-serif;
   font-size: 100%;
-  font-family: 400 1em/1.4 "Open Sans", sans-serif;
   color: #404040;
   text-rendering: optimizelegibility; }
 
 body {
-  width: 100%; }
+  /*
+    width:100%;
+  */
+  max-width: 1280px;
+  margin: 0 auto; }
 
 /* ==========================================*/
 /*              Flex General                 */
 /* ==========================================*/
 .flex {
+  display: -webkit-flex;
   display: flex; }
 
 .flexColumn {
@@ -81,7 +86,9 @@ body {
   width: 40vw; }
 
 .bookNowContact {
-  font-family: 400 1em/1.4 "Open Sans", sans-serif;
+  /*
+    font-family: $font-main;
+  */
   font-size: 2vw;
   font-weight: bold;
   margin: 0 8vw;
@@ -119,7 +126,7 @@ li {
 /*.subNav, nav li a{*/
 nav li a {
   display: block;
-  font-family: 400 1em/1.4 "Open Sans", sans-serif;
+  font-family: normal 400 1em/1.5 "Open Sans", sans-serif;
   font-weight: bold;
   font-size: 2vw;
   height: 4vw;
@@ -141,7 +148,7 @@ nav li a:focus {
 /*              Hero Space                   */
 /* ==========================================*/
 .geoTagline {
-  font-family: 400 1em/1.4 "Open Sans", sans-serif;
+  font-family: normal 400 1em/1.5 "Open Sans", sans-serif;
   font-size: 2vw;
   word-spacing: .1em;
   letter-spacing: .1em;
@@ -174,7 +181,7 @@ nav li a:focus {
 /* ==========================================*/
 .subNav {
   width: 100%;
-  font-family: 400 1em/1.4 "Open Sans", sans-serif;
+  font-family: normal 400 1em/1.5 "Open Sans", sans-serif;
   font-weight: bold;
   font-size: 3vw;
   height: 4.5vw;
@@ -184,7 +191,7 @@ nav li a:focus {
 
 .bgBrown {
   background-color: #d9d2bb;
-  font-size: 2.2vw;
+  font-size: 3vw;
   height: 4vw;
   padding-top: .8vw; }
 
@@ -200,7 +207,7 @@ section h1:first-of-type {
   padding-top: 2vw; }
 
 section.about p {
-  line-height: 1.6;
+  line-height: 1.5;
   font-weight: bold;
   font-size: 1.8vw;
   padding: 2vw 9vw; }
@@ -224,8 +231,7 @@ section h1:last-of-type {
 /* ==========================================*/
 /*              Facilities & Amenities       */
 /* ==========================================*/
-.flexRow h2 {
-  font-size: 2.7vw;
+.flexRow .innerText h2 {
   font-weight: bold;
   margin: 0 4vw; }
 
@@ -233,7 +239,7 @@ section h1:last-of-type {
   padding-top: 6vw;
   padding-bottom: 4vw; }
 
-.flexRow p {
+.flexRow .innerText p {
   line-height: 2.3vw;
   font-size: 1.5vw;
   font-weight: bold;
@@ -273,6 +279,35 @@ article figure {
 /* ==========================================*/
 /*              Rates                        */
 /* ==========================================*/
+.season {
+  background-color: #eaeadd;
+  width: 40%; }
+
+.season .title {
+  background-color: #d9d2bb; }
+
+.season .title h2 {
+  height: 2em;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  line-height: 2em; }
+
+.season .title p {
+  font-size: .5em;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+  padding: 0; }
+
+.season h3 {
+  margin: 1em 1em;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1em;
+  font-weight: bold; }
+
 /* ==========================================*/
 /*              End Rates                    */
 /* ==========================================*/

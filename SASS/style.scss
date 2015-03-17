@@ -6,10 +6,12 @@
 /*              SASS Variables               */
 /* ==========================================*/
 
-$font-main: 400 1em/1.4 "Open Sans",sans-serif;
+$font-main: normal 400 1em/1.5 "Open Sans", sans-serif;
+$line-height: 1.5;
 $menu-font-size: 1.7vw;
 $bullet: "\2022";
 $bgBrown: rgba(217, 210, 187, 1 );
+$bgTan: rgba(234, 234, 221, 1 );
 
 /* ==========================================*/
 /*              End SASS Variables           */
@@ -34,17 +36,22 @@ $bgBrown: rgba(217, 210, 187, 1 );
 /* ==========================================*/
 
 html{
+  font: $font-main;
   font-size: 100%;
-  font-family: $font-main;
   color: #404040;
   text-rendering: optimizelegibility; 
 }
 
 body{
+/*
   width:100%;
+*/
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .wrapper{
+
 }
 
 /* ==========================================*/
@@ -52,7 +59,9 @@ body{
 /* ==========================================*/
 
 .flex{
-  display: flex; 
+  display: -webkit-flex;
+  display: flex;
+
 }
 
 .flexColumn{
@@ -116,7 +125,9 @@ body{
 }
 
 .bookNowContact{
+/*
   font-family: $font-main;
+*/
   font-size: 2vw;
   font-weight: bold;
   margin: 0 8vw;
@@ -241,7 +252,7 @@ nav li a:focus {
 // Amazing outdoor recreation oportunities
 .bgBrown{
   background-color: $bgBrown;
-  font-size: 2.2vw;
+  font-size: 3vw;
   height: 4vw;
   padding-top: .8vw;
 }
@@ -260,7 +271,7 @@ section h1:first-of-type{
 }
 
 section.about p{
-  line-height: 1.6;
+  line-height: 1.5;
   font-weight: bold;
   font-size: 1.8vw;
   padding: 2vw 9vw;
@@ -290,8 +301,7 @@ section h1:last-of-type{
 /*              Facilities & Amenities       */
 /* ==========================================*/
 
-.flexRow h2{
-  font-size: 2.7vw; 
+.flexRow .innerText h2{
   font-weight: bold;
   margin: 0 4vw;
 }
@@ -301,7 +311,7 @@ section h1:last-of-type{
   padding-bottom:4vw;
 }
 
-.flexRow p{
+.flexRow .innerText p{
   line-height: 2.3vw;
   font-size: 1.5vw; 
   font-weight: bold;
@@ -353,7 +363,39 @@ article figure {
 /*              Rates                        */
 /* ==========================================*/
 
+.season{
+  background-color: $bgTan;
+  width: 40%;
+}
 
+.season .title{
+  background-color: $bgBrown;
+}
+
+.season .title h2{
+  height: 2em;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  line-height: 2em;
+}
+
+.season .title p{
+  font-size: .5em;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.season h3{
+  margin: 1em 1em;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1em;
+  font-weight: bold;
+}
 
 /* ==========================================*/
 /*              End Rates                    */
