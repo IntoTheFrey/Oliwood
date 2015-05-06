@@ -19,17 +19,20 @@
 /* ==========================================*/
 /*              General                      */
 /* ==========================================*/
+.hideThis {
+  display: none; }
+
+.showThisBlock {
+  display: block; }
+
 html {
-  font: normal 400 1em/1.5 "Open Sans", sans-serif;
+  font: normal 400 1vw/1.5 "Open Sans", sans-serif;
   font-size: 100%;
   color: #404040;
   text-rendering: optimizelegibility; }
 
 body {
-  /*
-    width:100%;
-  */
-  max-width: 1280px;
+  max-width: 960px;
   margin: 0 auto; }
 
 /* ==========================================*/
@@ -40,12 +43,10 @@ body {
   display: flex; }
 
 .flexColumn {
-  flex-flow: column;
-  align-content: stretch; }
+  flex-flow: column; }
 
 .flexRow {
-  flex-flow: row;
-  justify-content: stretch; }
+  flex-flow: row; }
 
 .flexCenter {
   justify-content: center;
@@ -72,8 +73,7 @@ body {
 .banner {
   display: flex;
   flex-flow: row;
-  align-content: center;
-  margin: 0 5vw; }
+  justify-content: center; }
 
 .banner > div {
   display: flex;
@@ -83,16 +83,15 @@ body {
   padding: 4.5vw 4vw; }
 
 .logo img {
-  width: 40vw; }
+  width: 30vw;
+  min-width: 175px;
+  max-width: 400px; }
 
 .bookNowContact {
-  /*
-    font-family: $font-main;
-  */
   font-size: 2vw;
   font-weight: bold;
   margin: 0 8vw;
-  margin-top: 6vw; }
+  justify-content: center; }
 
 .bookNow {
   margin-bottom: 1vw; }
@@ -106,39 +105,46 @@ body {
 /* ==========================================*/
 /*              Nav                          */
 /* ==========================================*/
-nav {
+.mobileMenu {
+  display: none; }
+
+.mainNav {
   background-color: #dce5df; }
 
-ul {
+.mainNav ul {
   padding: 0;
   margin: 0;
   display: flex;
   flex-flow: row;
   justify-content: center; }
 
-ul > * {
+.mainNav ul > * {
   min-height: 1vw;
   width: 20%; }
 
-li {
-  width: 20%; }
+.mainNav li:last-of-type {
+  display: none; }
 
-/*.subNav, nav li a{*/
-nav li a {
-  display: block;
-  font-family: normal 400 1em/1.5 "Open Sans", sans-serif;
+.mainNav li a {
+  display: flex;
+  flex-direction: column;
   font-weight: bold;
-  font-size: 2vw;
-  height: 4vw;
-  padding-top: .8vw;
+  font-size: 1.4vw;
+  height: 3vw;
   color: #3c3129;
   text-decoration: none;
   text-transform: uppercase;
-  text-align: center; }
+  text-align: center;
+  justify-content: center; }
 
-nav li a:hover,
-nav li a:active,
-nav li a:focus {
+/*
+.mainNav li:nth-of-type(3){
+  margin-right: 2vw;
+}
+*/
+.mainNav li a:hover,
+.mainNav li a:active,
+.mainNav li a:focus {
   background-color: #d9d2bb; }
 
 /* ==========================================*/
@@ -148,25 +154,25 @@ nav li a:focus {
 /*              Hero Space                   */
 /* ==========================================*/
 .geoTagline {
-  font-family: normal 400 1em/1.5 "Open Sans", sans-serif;
-  font-size: 2vw;
+  font-family: normal 400 1vw/1.5 "Open Sans", sans-serif;
+  font-size: 1.8vw;
   word-spacing: .1em;
   letter-spacing: .1em;
   position: relative;
-  top: .8vw;
-  left: 3vw;
+  top: .5vw;
   height: 0;
-  margin: 0;
-  width: 95%; }
+  margin: 0 auto;
+  width: 96%;
+  text-align: left; }
 
 .whiteImgOverText {
-  font-size: 3vw;
+  font-size: 2.75vw;
   line-height: 1.6em;
   font-weight: bold;
   color: white;
   position: relative;
-  top: -40vw;
-  left: 13vw;
+  top: -32vw;
+  left: 8vw;
   height: 0;
   width: 75vw; }
 
@@ -181,49 +187,48 @@ nav li a:focus {
 /* ==========================================*/
 .subNav {
   width: 100%;
-  font-family: normal 400 1em/1.5 "Open Sans", sans-serif;
+  font-family: normal 400 1vw/1.5 "Open Sans", sans-serif;
   font-weight: bold;
-  font-size: 3vw;
-  height: 4.5vw;
-  padding-top: .5vw;
+  font-size: 1.5rem;
+  height: 1.98rem;
   background-color: #dce5df;
-  text-align: center; }
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.3; }
 
 .bgBrown {
   background-color: #d9d2bb;
-  font-size: 3vw;
-  height: 4vw;
-  padding-top: .8vw; }
+  font-size: calc(3vw/1.2);
+  height: 5vw;
+  line-height: 3.5vw; }
 
 section h1 {
-  font-size: 3.7vw;
+  font-size: 3.2vw;
   font-weight: bold;
   margin: 0 auto;
   padding: 0 1.8vw;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  line-height: 1.4; }
 
 section h1:first-of-type {
   padding-top: 2vw; }
 
 section.about p {
   line-height: 1.5;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.8vw;
-  padding: 2vw 9vw; }
+  padding: 2vw 2vw; }
 
 section h1:last-of-type {
   padding-top: 2vw;
   padding-bottom: 2vw;
   font-size: 3vw; }
 
-.posHotTubText {
-  top: -27vw;
-  left: 69vw;
-  width: 25vw; }
-
-#self-catered {
-  font-size: 2vw; }
+.hotTub .posHotTubText {
+  top: -25vw;
+  left: 70%;
+  width: 24vw; }
 
 /* ==========================================*/
 /*              End About                    */
@@ -233,27 +238,31 @@ section h1:last-of-type {
 /* ==========================================*/
 .flexRow .innerText h2 {
   font-weight: bold;
-  margin: 0 4vw; }
+  margin: 0 2vw;
+  font-size: 4vw; }
 
 #private h2 {
-  padding-top: 6vw;
-  padding-bottom: 4vw; }
+  /*
+    padding-top: 7vw;
+    padding-bottom: 3vw;
+  */ }
 
 .flexRow .innerText p {
-  line-height: 2.3vw;
+  line-height: 1.2;
   font-size: 1.5vw;
-  font-weight: bold;
-  margin-left: 4vw;
-  max-width: 85%; }
+  font-weight: 600;
+  margin: 2px 4vw;
+  max-width: 96%; }
 
 article.flexRow {
-  margin: 6vw 0; }
+  margin: 4vw 0; }
 
 article .innerText {
   flex: 1 1 0; }
 
 article figure {
-  flex: 1.5 1 0; }
+  min-height: 282px;
+  flex: 1 1 0; }
 
 /* ==========================================*/
 /*              End Facilities & Amenities   */
@@ -270,6 +279,9 @@ article figure {
 /* ==========================================*/
 /*              End Location                 */
 /* ==========================================*/
+.imgAbout {
+  margin-top: 20px; }
+
 /* ==========================================*/
 /*              Availability Calendar        */
 /* ==========================================*/
@@ -279,9 +291,16 @@ article figure {
 /* ==========================================*/
 /*              Rates                        */
 /* ==========================================*/
+.rates h2 {
+  font-size: 4vw;
+  font-weight: bold;
+  width: 70%;
+  text-align: center;
+  margin: 2vw auto; }
+
 .season {
   background-color: #eaeadd;
-  width: 40%; }
+  width: 45%; }
 
 .season .title {
   background-color: #d9d2bb; }
@@ -291,14 +310,15 @@ article figure {
   width: 100%;
   margin: 0;
   text-align: center;
-  line-height: 2em; }
+  line-height: 2em;
+  font-weight: bold; }
 
 .season .title p {
-  font-size: .5em;
+  font-size: .5rem;
   font-weight: 400;
   font-style: italic;
   text-align: center;
-  margin: 0;
+  margin: 0 0 8px 0;
   padding: 0; }
 
 .season h3 {
@@ -306,10 +326,228 @@ article figure {
   text-align: center;
   vertical-align: middle;
   font-size: 1em;
-  font-weight: bold; }
+  font-weight: 600; }
+
+.season p {
+  margin: 1px 10px; }
+
+.rateBox {
+  padding-bottom: 10px; }
+
+#contact p {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto; }
 
 /* ==========================================*/
 /*              End Rates                    */
 /* ==========================================*/
+/* ==========================================*/
+/*              Contact Us                   */
+/* ==========================================*/
+#sectionContact p {
+  text-align: center;
+  height: 30px;
+  line-height: 1.5;
+  text-align: center;
+  height: 4vw;
+  line-height: 1.4;
+  font-size: 3vw; }
+
+.preFooter {
+  background-color: #d9d2bb; }
+
+.footerBookNowContact {
+  justify-content: center;
+  margin: 0 4vw; }
+
+#sectionContact .footerBookNowContact p {
+  text-align: left;
+  line-height: 1.5;
+  font-size: 1vw;
+  font-weight: 600;
+  height: 5vw; }
+
+.footerLogoContainer {
+  justify-content: center; }
+
+s
+.footerLogoContainer .logo {
+  padding: 3vw 4vw; }
+
+.welcome {
+  text-align: center;
+  position: relative;
+  top: -3vw;
+  font-weight: 700;
+  font-size: 3vw; }
+
+/* ==========================================*/
+/*              End Contact Us               */
+/* ==========================================*/
+/* ==========================================*/
+/*              Footer                       */
+/* ==========================================*/
+footer div {
+  color: antiquewhite;
+  height: 33px;
+  background-color: #3c3129;
+  text-align: center;
+  line-height: 2;
+  font-size: 3vw; }
+
+/* ==========================================*/
+/*              End Footer                   */
+/* ==========================================*/
+@media only screen and (max-width: 2800px) {
+  footer div {
+    font-size: 1vw;
+    height: 269px; } }
+/* ==================== medium screens ========================== */
+@media only screen and (max-width: 599px) {
+  .mainNav li a {
+    font-weight: bold;
+    font-size: 1vw;
+    height: 2vw; } }
+/* ==================== tiny screens ========================== */
+@media only screen and (max-width: 480px) {
+  .banner {
+    flex-direction: column;
+    margin: 0 auto; }
+
+  .banner div {
+    display: flex;
+    flex-direction: column;
+    text-align: center; }
+
+  .logo img {
+    margin-top: 20px; }
+
+  .email {
+    margin-bottom: 7px; }
+
+  .menuTop {
+    position: fixed;
+    top: 0;
+    left: 0; }
+
+  .mobileMenu {
+    display: block;
+    background-color: bisque;
+    text-align: right;
+    font-weight: 700;
+    height: 8vw;
+    line-height: 1.3;
+    margin: 0;
+    cursor: pointer;
+    width: 100%;
+    padding-right: 7px;
+    z-index: 30; }
+
+  .mainNav {
+    display: none; }
+
+  .mainNav {
+    top: 27px;
+    position: fixed;
+    width: 100%;
+    z-index: 30; }
+
+  .mainNav li {
+    width: 100%;
+    line-height: 2;
+    border-top: solid white 1px;
+    height: 35px; }
+
+  .mainNav li a {
+    width: 100%;
+    line-height: 2;
+    height: 35px; }
+
+  .subNav {
+    font-size: 6vw;
+    line-height: 1.4; }
+
+  .bgBrown {
+    font-size: calc(3vw/1.2);
+    height: 13vw;
+    line-height: 6vw; }
+
+  .hotTub .posHotTubText {
+    top: -32vw;
+    left: 61%;
+    width: 33vw; }
+
+  section p {
+    font-size: 3vw;
+    margin: 0 5px; }
+
+  section h1 {
+    width: 103%;
+    padding-left: 0; }
+
+  section h3 {
+    line-height: 1.5;
+    font-weight: 600;
+    font-size: 1.8vw;
+    padding: 2vw 2vw; }
+
+  .flexRow .innerText h2 {
+    font-weight: bold;
+    font-size: 5.5vw; }
+
+  section.amenities article.flexRow {
+    margin: 4vw 0;
+    flex-direction: column-reverse;
+    height: 400px; }
+
+  section.amenities article.flexRow:nth-of-type(2) figure {
+    order: 2; }
+
+  section.amenities article.flexRow:nth-of-type(1) {
+    height: 588px; }
+
+  section.amenities article.flexRow:nth-of-type(2) {
+    height: 475px; }
+
+  section.amenities article.flexRow:nth-of-type(3) {
+    height: 640px; }
+
+  section.amenities article.flexRow .innerText p {
+    line-height: 1.4; }
+
+  section.amenities article.flexRow:nth-of-type(1) .innerText {
+    margin-bottom: 40px; }
+
+  section.amenities article.flexRow:nth-of-type(2) .innerText {
+    margin-bottom: 40px; }
+
+  section.amenities article.flexRow:nth-of-type(3) .innerText {
+    margin-bottom: 40px; }
+
+  section.amenities article.flexRow:nth-of-type(3) .innerText h2 {
+    margin-top: -20px; }
+
+  .season {
+    width: 47%; }
+
+  .season p {
+    margin: 1px 5px; }
+
+  .season h3 {
+    margin: 1px 3px; }
+
+  #sectionContact .footerBookNowContact p {
+    text-align: center; }
+
+  #sectionContact p {
+    height: 7vw; }
+
+  .preFooter {
+    flex-wrap: wrap;
+    flex-direction: column; }
+
+  .logo {
+    margin: 0 auto; } }
 
 /*# sourceMappingURL=style.css.map */

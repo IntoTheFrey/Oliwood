@@ -1,0 +1,260 @@
+
+
+/*
+* {
+  border: solid black 1px!important;
+}
+*/
+test {
+  opacity: .5;  
+  animate: ease-in 2sec;
+}
+
+.calendar {
+  max-width: 960px;
+  background-color: floralwhite;
+  width: 100%;
+  font-size: 100%;
+  font-family: Verdana,Arial,sans-serif;
+  margin: 0 auto;
+}
+
+.calendar h1 {
+  font-size:3rem; 
+  text-align: center;
+}
+
+.calendar h2, .calendar p {
+  margin-left: 10%;
+  font-family: sans-serif;
+  font-size: 2.5rem;
+}
+
+.calendar p{
+  font-size:.7rem;
+}
+
+.calendar .header {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.calendar nav {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap:wrap;
+  max-width: 960px;
+}
+
+.calendar nav ul {
+  display:flex;
+}
+
+.calendar .rowYear{
+  display: flex;
+  justify-content: center;
+  max-width: 960px;
+  flex-wrap: wrap;
+}
+
+.calendar .year {
+  min-height: 25px;
+  min-width: 47px;
+  text-align: center;
+  line-height: 1.5rem; 
+}
+
+.calendar #year1, .calendar #year2, .calendar #month1, .calendar #month2{
+  max-height: 60px;
+  width:282px;
+  max-width: 282px;
+  min-width: 242px;
+}
+
+.calendar #month1 {
+ justify-content: flex-end;
+  width:282px;
+}
+
+.calendar #month2 {
+ justify-content: flex-start; 
+  width:282px;
+}
+
+
+.calendar nav li {
+  background-color: aquamarine;
+  border-radius: 30px;
+}
+
+.calendar a:focus {outline:none;}
+
+
+
+.calendar nav li a {
+  display:block;
+  height: 55px;
+  width: 47px;
+  min-height: 47px;
+  min-width: 40px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 2.4; 
+  cursor: pointer;
+  
+}
+
+.calendar nav li a:hover,
+.calendar nav li a:focus,
+.calendar nav li a:active,
+.calendar nav li:hover,
+.calendar nav li:focus,
+.calendar nav li:active {
+  background-color: #facf97; 
+}
+
+.calendar nav a {
+  text-decoration: none;
+  color: black;
+}
+
+#currentYear {
+  display: block;
+  height: 12px;
+  font-size: .8rem;
+}
+
+.curMonth {
+  background-color: #facf97;
+}
+
+.monthHeader {
+  display:flex; 
+  justify-content: center;
+}
+
+div.weekdayHeading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 20%;
+  line-height: 1.5;
+  max-height: 47px;
+/*
+  background-color: ivory;
+*/
+  width:100px;
+  height:25px;
+  max-width: 100px;
+  width:100%;
+}
+
+#demo {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 750px;
+  width:100%;
+  min-height: 460px;  
+  background-color: floralwhite;
+
+}
+
+
+.week {
+  display:flex;
+  justify-content: center;
+}
+
+
+div.day, div.pday {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;  
+  margin-right: 1px;
+  margin-bottom: 1px;
+  border-radius: 5px;
+  background-color: burlywood;
+  width:100%;
+  height:5vw;
+  min-height: 65px;
+  max-height: 80px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  max-width: 100px;
+  font-size: 1.3vw;
+}
+
+div.pday{
+ opacity:.5; 
+}
+
+div.today {
+  background-color: sandybrown;
+}
+
+div.booked{
+  background-color: darkgoldenrod;
+}
+ 
+div.today div.dayContainer::after {
+  content: "Today";
+  color: white;
+  margin:5px auto;
+}
+
+.dayContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cDate {
+  text-align: center;
+  margin-top: 5px;
+}
+
+
+section {
+}
+
+
+#year1 {
+ order:0; 
+}
+#year2 {
+ order:1; 
+}
+#month1 {
+ order:2; 
+}
+#month2 {
+ order:3; 
+}
+
+
+footer p{
+  
+  
+}
+
+@media only screen and (max-width:563px){
+  
+  #year1 {
+   order:0; 
+  }
+  #year2 {
+   order:2; 
+  }
+  #month1 {
+   order:1; 
+  }
+  #month2 {
+   order:3; 
+  }
+
+}
+
