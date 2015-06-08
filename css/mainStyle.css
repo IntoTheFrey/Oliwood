@@ -4,17 +4,19 @@ CSS Settings For HTML Div ExactCenter
 ------------------------------------------------*/
 
 #main {
+/*
   width:960px;
   margin:50px auto;
   font-family:raleway
+*/
 }
 
 span {
-  color:red
+ color: #5a4444;
 }
 
 h2 {
-  text-align:center;
+   text-align:center;
   border-radius:10px 10px 0 0;
   margin-bottom: 30px;
 }

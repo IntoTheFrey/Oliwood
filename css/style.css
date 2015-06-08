@@ -1,4 +1,13 @@
 @charset "UTF-8";
+:root {
+  font-size: 12px; }
+
+@media (min-width: 480px) and (max-width: 1200px) {
+  :root {
+    font-size: calc( 12px + (22 - 12) * ( (100vw - 480px) / ( 1200 - 480) )); } }
+@media (min-width: 1200px) {
+  :root {
+    font-size: 22px; } }
 /* ==========================================*/
 /*              SASS Variables               */
 /* ==========================================*/
@@ -22,14 +31,14 @@
 .hideThis {
   display: none; }
 
-.showThisBlock {
-  display: block; }
-
 html {
   font: normal 400 1vw/1.5 "Open Sans", sans-serif;
-  font-size: 100%;
-  color: #404040;
-  text-rendering: optimizelegibility; }
+  color: #3c3129;
+  /*
+    font-size: 100%;
+    color: #404040;
+    text-rendering: optimizelegibility; 
+  */ }
 
 body {
   max-width: 960px;
@@ -39,29 +48,54 @@ body {
 /*              Flex General                 */
 /* ==========================================*/
 .flex {
+  display: -webkit-box;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex; }
 
 .flexColumn {
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
   flex-flow: column; }
 
 .flexRow {
+  -webkit-flex-flow: row;
+  -ms-flex-flow: row;
   flex-flow: row; }
 
 .flexCenter {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
   align-content: center; }
 
 .flexStart {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
   align-content: flex-start; }
 
 .flexSpaceAround {
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: distribute;
   align-content: space-around; }
 
 .flexSpaceBetween {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: justify;
   align-content: space-between; }
 
 /* ==========================================*/
@@ -71,33 +105,49 @@ body {
 /*              Header .banner               */
 /* ==========================================*/
 .banner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-flow: row;
+  -ms-flex-flow: row;
   flex-flow: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center; }
 
 .banner > div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
   flex-flow: column; }
 
 .logo {
   padding: 4.5vw 4vw; }
 
 .logo img {
-  width: 30vw;
-  min-width: 175px;
+  width: 17rem;
+  min-width: 225px;
   max-width: 400px; }
 
 .bookNowContact {
-  font-size: 2vw;
+  font-size: .8rem;
   font-weight: bold;
   margin: 0 8vw;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center; }
 
 .bookNow {
   margin-bottom: 1vw; }
 
 .email {
-  font-size: 1.5vw; }
+  font-size: .8rem; }
 
 /* ==========================================*/
 /*              End Header .banner           */
@@ -114,8 +164,16 @@ body {
 .mainNav ul {
   padding: 0;
   margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-flow: row;
+  -ms-flex-flow: row;
   flex-flow: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center; }
 
 .mainNav ul > * {
@@ -126,23 +184,28 @@ body {
   display: none; }
 
 .mainNav li a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   font-weight: bold;
-  font-size: 1.4vw;
+  font-size: .8rem;
   height: 3vw;
   color: #3c3129;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center; }
 
-/*
-.mainNav li:nth-of-type(3){
-  margin-right: 2vw;
-}
-*/
-.mainNav li a:hover,
+.mainNav li a:hover
 .mainNav li a:active,
 .mainNav li a:focus {
   background-color: #d9d2bb; }
@@ -153,9 +216,11 @@ body {
 /* ==========================================*/
 /*              Hero Space                   */
 /* ==========================================*/
+.promo img {
+  width: 100%; }
+
 .geoTagline {
-  font-family: normal 400 1vw/1.5 "Open Sans", sans-serif;
-  font-size: 1.8vw;
+   font-size: .8rem;
   word-spacing: .1em;
   letter-spacing: .1em;
   position: relative;
@@ -163,10 +228,10 @@ body {
   height: 0;
   margin: 0 auto;
   width: 96%;
-  text-align: left; }
+  text-align: center; }
 
 .whiteImgOverText {
-  font-size: 2.75vw;
+  font-size: 1.2rem;
   line-height: 1.6em;
   font-weight: bold;
   color: white;
@@ -196,14 +261,39 @@ body {
   text-transform: uppercase;
   line-height: 1.3; }
 
+.top img {
+  height: 2.5vw;
+  float: left;
+  margin: 5px 0; }
+
+.top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 1rem;
+  height: 0;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #3c3129; }
+
+.top a:hover,
+.top:hover {
+  color: #3c3129;
+  text-decoration: none; }
+
 .bgBrown {
   background-color: #d9d2bb;
-  font-size: calc(3vw/1.2);
+  font-size: 1.2rem;
   height: 5vw;
-  line-height: 3.5vw; }
+  line-height: 4.7vw; }
 
 section h1 {
-  font-size: 3.2vw;
   font-weight: bold;
   margin: 0 auto;
   padding: 0 1.8vw;
@@ -217,17 +307,16 @@ section h1:first-of-type {
 section.about p {
   line-height: 1.5;
   font-weight: 600;
-  font-size: 1.8vw;
+  font-size: 1rem;
   padding: 2vw 2vw; }
 
 section h1:last-of-type {
   padding-top: 2vw;
-  padding-bottom: 2vw;
-  font-size: 3vw; }
+  padding-bottom: 2vw; }
 
 .hotTub .posHotTubText {
-  top: -25vw;
-  left: 70%;
+  top: -24vw;
+  left: 67%;
   width: 24vw; }
 
 /* ==========================================*/
@@ -239,29 +328,31 @@ section h1:last-of-type {
 .flexRow .innerText h2 {
   font-weight: bold;
   margin: 0 2vw;
-  font-size: 4vw; }
-
-#private h2 {
-  /*
-    padding-top: 7vw;
-    padding-bottom: 3vw;
-  */ }
+  font-size: 1.5rem;
+  text-align: left;
+  margin: 1rem 1rem; }
 
 .flexRow .innerText p {
-  line-height: 1.2;
-  font-size: 1.5vw;
+  line-height: 1.4;
+  font-size: 1rem;
   font-weight: 600;
-  margin: 2px 4vw;
-  max-width: 96%; }
+  margin: .5rem 1rem;
+  max-width: 100%; }
 
 article.flexRow {
-  margin: 4vw 0; }
+  margin: 0 0; }
 
 article .innerText {
-  flex: 1 1 0; }
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+  margin: 1rem 0; }
 
 article figure {
-  min-height: 282px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
   flex: 1 1 0; }
 
 /* ==========================================*/
@@ -271,8 +362,14 @@ article figure {
 /*              Location                     */
 /* ==========================================*/
 .googlemap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  height: 100%;
+  height: 96%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin: 0 auto; }
 
@@ -280,11 +377,48 @@ article figure {
 /*              End Location                 */
 /* ==========================================*/
 .imgAbout {
+  width: 100%;
   margin-top: 20px; }
+
+figure img {
+  width: 100%; }
 
 /* ==========================================*/
 /*              Availability Calendar        */
 /* ==========================================*/
+#calendar-legend {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+#calendar-legend-box-booked,
+#calendar-legend-box-available {
+  margin-top: 1rem;
+  background-color: darkgoldenrod;
+  height: 60px;
+  width: 5rem;
+  border-radius: 5px;
+  color: antiquewhite;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 2.5; }
+
+#calendar-legend-box-available {
+  background-color: burlywood;
+  left: 10px;
+  top: 11px; }
+
 /* ==========================================*/
 /*              End Avalability Calendar     */
 /* ==========================================*/
@@ -292,11 +426,14 @@ article figure {
 /*              Rates                        */
 /* ==========================================*/
 .rates h2 {
-  font-size: 4vw;
+  font-size: 1rem;
   font-weight: bold;
   width: 70%;
   text-align: center;
   margin: 2vw auto; }
+
+.rates p {
+  margin: 0 auto; }
 
 .season {
   background-color: #eaeadd;
@@ -306,15 +443,15 @@ article figure {
   background-color: #d9d2bb; }
 
 .season .title h2 {
-  height: 2em;
+  height: 2rem;
   width: 100%;
   margin: 0;
   text-align: center;
-  line-height: 2em;
+  line-height: 2rem;
   font-weight: bold; }
 
 .season .title p {
-  font-size: .5rem;
+  font-size: .8rem;
   font-weight: 400;
   font-style: italic;
   text-align: center;
@@ -322,10 +459,10 @@ article figure {
   padding: 0; }
 
 .season h3 {
-  margin: 1em 1em;
+  margin: 1rem 1rem;
   text-align: center;
   vertical-align: middle;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 600; }
 
 .season p {
@@ -351,27 +488,36 @@ article figure {
   line-height: 1.5;
   text-align: center;
   height: 4vw;
-  line-height: 1.4;
-  font-size: 3vw; }
+  line-height: 1.8;
+  font-size: 1.1rem; }
 
 .preFooter {
-  background-color: #d9d2bb; }
+  background-color: #d9d2bb;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
 
 .footerBookNowContact {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin: 0 4vw; }
 
 #sectionContact .footerBookNowContact p {
   text-align: left;
-  line-height: 1.5;
-  font-size: 1vw;
+  line-height: 4.5;
+  font-size: .8rem;
   font-weight: 600;
-  height: 5vw; }
+  height: 3vw; }
 
 .footerLogoContainer {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center; }
 
-s
 .footerLogoContainer .logo {
   padding: 3vw 4vw; }
 
@@ -380,7 +526,7 @@ s
   position: relative;
   top: -3vw;
   font-weight: 700;
-  font-size: 3vw; }
+  font-size: 1.5rem; }
 
 /* ==========================================*/
 /*              End Contact Us               */
@@ -394,37 +540,67 @@ footer div {
   background-color: #3c3129;
   text-align: center;
   line-height: 2;
-  font-size: 3vw; }
+  font-size: 1.5rem; }
 
 /* ==========================================*/
 /*              End Footer                   */
 /* ==========================================*/
 @media only screen and (max-width: 2800px) {
   footer div {
-    font-size: 1vw;
+    font-size: 1rem;
     height: 269px; } }
 /* ==================== medium screens ========================== */
-@media only screen and (max-width: 599px) {
+@media only screen and (min-width: 481px) and (max-width: 599px) {
+  .mainNav ul li:first-of-type {
+    width: 17%; }
+
+  .mainNav ul li:last-of-type {
+    width: 17%; }
+
   .mainNav li a {
-    font-weight: bold;
-    font-size: 1vw;
-    height: 2vw; } }
+    font-weight: normal;
+    height: 5vw; } }
 /* ==================== tiny screens ========================== */
 @media only screen and (max-width: 480px) {
   .banner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
-    margin: 0 auto; }
+    margin: 0 auto;
+    width: 100%; }
 
   .banner div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
     text-align: center; }
+
+  .banner div:first-of-type {
+    margin-top: 24px; }
 
   .logo img {
     margin-top: 20px; }
 
   .email {
     margin-bottom: 7px; }
+
+  .showThisBlock {
+    position: relative;
+    text-align: center; }
+
+  .mainNav {
+    display: none; }
+
+  .top {
+    display: none; }
 
   .menuTop {
     position: fixed;
@@ -433,45 +609,44 @@ footer div {
 
   .mobileMenu {
     display: block;
-    background-color: bisque;
-    text-align: right;
+    background-color: #ffc4c4;
+    text-align: center;
     font-weight: 700;
-    height: 8vw;
-    line-height: 1.3;
+    height: 47px;
+    line-height: 2.6;
     margin: 0;
     cursor: pointer;
     width: 100%;
-    padding-right: 7px;
-    z-index: 30; }
+    z-index: 30;
+    font-size: 1.4rem; }
 
-  .mainNav {
-    display: none; }
-
-  .mainNav {
-    top: 27px;
+  #mainUL {
+    top: 47px;
     position: fixed;
     width: 100%;
     z-index: 30; }
 
-  .mainNav li {
+  #mainUL li {
     width: 100%;
     line-height: 2;
     border-top: solid white 1px;
-    height: 35px; }
+    height: 47px;
+    background-color: bisque; }
 
-  .mainNav li a {
+  #mainUL li a {
     width: 100%;
-    line-height: 2;
-    height: 35px; }
+    line-height: 3;
+    height: 47px;
+    text-decoration: none;
+    display: block;
+    color: #3c3129;
+    font-weight: 600; }
 
-  .subNav {
-    font-size: 6vw;
-    line-height: 1.4; }
+  #mainUL li a:hover {
+    color: #3c3129; }
 
   .bgBrown {
-    font-size: calc(3vw/1.2);
-    height: 13vw;
-    line-height: 6vw; }
+    font-size: .8rem; }
 
   .hotTub .posHotTubText {
     top: -32vw;
@@ -479,54 +654,84 @@ footer div {
     width: 33vw; }
 
   section p {
-    font-size: 3vw;
+    font-size: 1.2rem;
     margin: 0 5px; }
 
   section h1 {
-    width: 103%;
+    width: 100%;
     padding-left: 0; }
 
   section h3 {
     line-height: 1.5;
     font-weight: 600;
-    font-size: 1.8vw;
+    font-size: 1rem;
     padding: 2vw 2vw; }
+
+  .flexRow .innerText {
+    margin: 0; }
 
   .flexRow .innerText h2 {
     font-weight: bold;
-    font-size: 5.5vw; }
+    margin: 0 1rem; }
+
+  section.about p {
+    line-height: 1.5;
+    font-weight: normal;
+    padding: 2vw 2vw; }
 
   section.amenities article.flexRow {
-    margin: 4vw 0;
+    margin: 0 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
     height: 400px; }
 
   section.amenities article.flexRow:nth-of-type(2) figure {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
     order: 2; }
 
   section.amenities article.flexRow:nth-of-type(1) {
-    height: 588px; }
+    height: 420px; }
 
   section.amenities article.flexRow:nth-of-type(2) {
-    height: 475px; }
+    height: 330px;
+    margin-top: 25px; }
+
+  #private h2 {
+    margin-bottom: -5rem;
+    margin-top: -2rem; }
+
+  #shared {
+    margin-bottom: 3rem; }
+
+  #shared p {
+    margin-top: 1.5rem; }
 
   section.amenities article.flexRow:nth-of-type(3) {
-    height: 640px; }
+    height: 450px; }
 
   section.amenities article.flexRow .innerText p {
     line-height: 1.4; }
 
-  section.amenities article.flexRow:nth-of-type(1) .innerText {
-    margin-bottom: 40px; }
+  #calendar-legend-box-booked,
+  #calendar-legend-box-available {
+    font-size: .8rem;
+    height: 34px;
+    line-height: 3; }
 
-  section.amenities article.flexRow:nth-of-type(2) .innerText {
-    margin-bottom: 40px; }
+  .calendar .header {
+    width: 75% !important; }
 
-  section.amenities article.flexRow:nth-of-type(3) .innerText {
-    margin-bottom: 40px; }
+  .calendar nav li a {
+    line-height: 2 !important;
+    font-size: 1.3rem !important; }
 
-  section.amenities article.flexRow:nth-of-type(3) .innerText h2 {
-    margin-top: -20px; }
+  #currentYear {
+    font-size: 1rem !important; }
 
   .season {
     width: 47%; }
@@ -538,16 +743,24 @@ footer div {
     margin: 1px 3px; }
 
   #sectionContact .footerBookNowContact p {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 5px; }
 
   #sectionContact p {
     height: 7vw; }
 
   .preFooter {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column; }
 
   .logo {
     margin: 0 auto; } }
-
-/*# sourceMappingURL=style.css.map */
+@media only screen and (max-width: 320px) {
+  html {
+    max-width: 320px; } }

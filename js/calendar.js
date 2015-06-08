@@ -13,6 +13,7 @@ $().ready(function () {
   var path = "";
   
   path = (dir == "/oliwood/admin")?"":"admin/";
+  //path = "";
   
   $("#startDate").datepicker();
   $("#startDate").datepicker("option", "dateFormat", "yy-mm-dd");
@@ -26,6 +27,8 @@ $().ready(function () {
   doAjax();
   
   function doAjax(){
+    //alert("PATH: " + path);
+    
     var obj = jQuery.ajax({
       type: "POST", // HTTP method POST or GET
       url: path + "configDataOnly.php", //Where to make Ajax calls
@@ -37,7 +40,7 @@ $().ready(function () {
       },
       error:function (xhr, ajaxOptions, thrownError){
           //On error, we alert user
-          alert("ErRoR: " + thrownError);         
+          alert("ErRoR: " + thrownError );         
       }
 
     });

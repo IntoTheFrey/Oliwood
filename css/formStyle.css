@@ -93,10 +93,24 @@
 }
 .del_wrapper{
   float:right;
+  height: 20px;
 }
 
 .del_wrapper img{
-  width:15px; 
+  margin: 10px auto;
+}
+
+.wrapDelete{
+  width: 30px;
+  display: flex;
+  height: 30px;
+  margin-top: -6px;
+}
+.wrapDelete:active,
+.wrapDelete:hover,
+.wrapDelete:focus{
+  border: solid green 1px;
+  border-radius: 30px;
 }
 
 .content_wrapper {

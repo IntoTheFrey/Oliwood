@@ -1,24 +1,47 @@
 
 @charset "UTF-8";
 
+// These values are the minimum and maximum viewport sizes to apply the font scaling
+$min_width: 480;
+$max_width: 1200;
+// These values represent the range of fon-tsize to apply  
+// These values effect the base font-size, headings and other elements will scale proportionally
+$min_font: 12;
+$max_font: 22; 
+
+:root { font-size: #{$min_font}px; }
+// This part is a little bit ugly, I will explain what is going on in a blog post soon.
+@media (min-width: #{$min_width}px) and (max-width: #{$max_width}px){
+  :root { 
+    font-size: calc( #{$min_font}px + (#{$max_font} - #{$min_font}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+  }
+}
+@media (min-width: #{$max_width}px){
+   :root { 
+     font-size: #{$max_font}px;
+   }
+}
 
 /* ==========================================*/
 /*              SASS Variables               */
 /* ==========================================*/
 
+//$font-main: normal 400 1vw/1.5 "Open Sans", sans-serif;
 $font-main: normal 400 1vw/1.5 "Open Sans", sans-serif;
-$line-height: 1.5;
-$menu-font-size: 1.7vw;
 $bullet: "\2022";
-$bgBrown: rgba(217, 210, 187, 1 );
-$subNavColor: rgba(220,229,223,1);
+$bgBrown: #d9d2bb;
+$subNavColor: #dce5df;
 
-$bgTan: rgba(234, 234, 221, 1 );
-$bgDarkBrown: rgba(60, 49, 41, 1 );
+$bgTan: #eaeadd;
+$bgDarkBrown: #3c3129;
+$bgLessDarkBrown: #3c3129;
 
 /* ==========================================*/
 /*              End SASS Variables           */
 /* ==========================================*/
+
+
+
 
 
 /* ==========================================*/
@@ -43,16 +66,16 @@ $bgDarkBrown: rgba(60, 49, 41, 1 );
   display: none; 
 }
 
-.showThisBlock {
-  display: block; 
-}
 
 
 html{
   font: $font-main;
+  color: $bgDarkBrown;
+/*
   font-size: 100%;
   color: #404040;
   text-rendering: optimizelegibility; 
+*/
 }
 
 body{
@@ -69,9 +92,7 @@ body{
 /* ==========================================*/
 
 .flex{
-  display: -webkit-flex;
-  display: flex;
-
+   display: flex;
 }
 
 .flexColumn{
@@ -127,13 +148,13 @@ body{
 }
 
 .logo img{
-  width: 30vw;
-  min-width: 175px;
+  width: 17rem;
+  min-width: 225px;
   max-width: 400px;
 }
 
 .bookNowContact{
-  font-size: 2vw;
+  font-size: .8rem;
   font-weight: bold;
   margin: 0 8vw;
   justify-content: center;
@@ -144,7 +165,7 @@ body{
 }
 
 .email{
-  font-size: 1.5vw;
+  font-size: .8rem;
 }
 
 /* ==========================================*/
@@ -155,7 +176,7 @@ body{
 /* ==========================================*/
 
 .mobileMenu {
-  display:none;
+  display: none;
 }
 
 .mainNav{
@@ -183,7 +204,7 @@ body{
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  font-size:1.4vw;
+  font-size: .8rem;
   height: 3vw;
   color: rgba(60,49,41,1);
   text-decoration: none;
@@ -192,16 +213,10 @@ body{
   justify-content: center;
 }
 
-/*
-.mainNav li:nth-of-type(3){
-  margin-right: 2vw;
-}
-*/
-
-
-.mainNav li a:hover,
+.mainNav li a:hover
 .mainNav li a:active,
-.mainNav li a:focus {
+.mainNav li a:focus
+{
   background-color: rgba(217,210,187,1);
 }
 
@@ -213,9 +228,11 @@ body{
 /*              Hero Space                   */
 /* ==========================================*/
 
+.promo img {
+  width: 100%; 
+}
 .geoTagline{
-  font-family: $font-main;
-  font-size: 1.8vw;
+  font-size: .8rem;
   word-spacing: .1em;
   letter-spacing: .1em;
   position: relative;
@@ -223,11 +240,11 @@ body{
   height: 0;
   margin: 0 auto;
   width: 96%;
-  text-align: left;
+  text-align: center;
 }
 
 .whiteImgOverText{
-  font-size: 2.75vw;
+  font-size: 1.2rem;
   line-height: 1.6em;
   font-weight: bold;
   color: white;
@@ -263,16 +280,40 @@ body{
   line-height: 1.3;
 }
 
+
+ .top img{
+  height: 2.5vw;
+  float: left;
+  margin: 5px 0;
+}
+
+
+.top{
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  height: 0;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: $bgDarkBrown;
+}
+
+.top a:hover,
+.top:hover{
+  color: $bgLessDarkBrown;
+  text-decoration: none;
+}
+
+
 // Amazing outdoor recreation oportunities
 .bgBrown{
   background-color: $bgBrown;
-  font-size: calc(3vw/1.2);
+  font-size: 1.2rem;
   height: 5vw;
-  line-height: 3.5vw;
+  line-height: 4.7vw;
 }
 
 section h1{
-  font-size: 3.2vw;
   font-weight: bold;
   margin: 0 auto;
   padding: 0 1.8vw;
@@ -288,19 +329,18 @@ section h1:first-of-type{
 section.about p{
   line-height: 1.5;
   font-weight: 600;
-  font-size: 1.8vw;
+  font-size: 1rem;
   padding: 2vw 2vw;
 }
 
 section h1:last-of-type{
   padding-top: 2vw;
   padding-bottom: 2vw;
-  font-size: 3vw;
 }
 
 .hotTub .posHotTubText{
-  top: -25vw;
-  left: 70%;
+  top: -24vw;
+  left: 67%;
   width: 24vw;
 }
 
@@ -316,34 +356,29 @@ section h1:last-of-type{
 .flexRow .innerText h2{
   font-weight: bold;
   margin: 0 2vw;
-  font-size: 4vw;
-}
-
-#private h2{
-/*
-  padding-top: 7vw;
-  padding-bottom: 3vw;
-*/
+  font-size: 1.5rem;
+  text-align: left;
+  margin: 1rem 1rem;
 }
 
 .flexRow .innerText p{
-  line-height: 1.2;
-  font-size: 1.5vw; 
+  line-height: 1.4;
+  font-size: 1rem; 
   font-weight: 600;
-  margin: 2px 4vw;
-  max-width: 96%;
+  margin: .5rem 1rem;
+  max-width: 100%;
 }
 
 article.flexRow{
-  margin: 4vw 0;
+  margin: 0 0;
 }
 
 article .innerText{
   flex:1 1 0;
+  margin: 1rem 0;
 }
 
 article figure {
-  min-height: 282px;
   flex: 1 1 0;
 }
 
@@ -358,7 +393,7 @@ article figure {
 
 .googlemap{
   display:flex;
-  height:100%;
+  height: 96%;
   justify-content: center;
   margin:0 auto;
 }
@@ -368,14 +403,42 @@ article figure {
 /* ==========================================*/
 
 .imgAbout {
+  width:100%;
   margin-top:20px; 
 }
+
+figure img {
+  width:100%;
+}
+
 /* ==========================================*/
 /*              Availability Calendar        */
 /* ==========================================*/
 
+#calendar-legend{
+  display:flex;
+  justify-content: center;  
+}
 
+#calendar-legend-box-booked,
+#calendar-legend-box-available{
+  margin-top:1rem;
+  background-color: darkgoldenrod;
+  height: 60px;
+  width: 5rem;
+  border-radius: 5px;
+  color:antiquewhite;
+  display:inline-flex;
+  justify-content: center;
+  line-height: 2.5;
+}
 
+#calendar-legend-box-available{
+  background-color: burlywood;
+  left: 10px;
+  top: 11px;
+
+}
 /* ==========================================*/
 /*              End Avalability Calendar     */
 /* ==========================================*/
@@ -383,11 +446,15 @@ article figure {
 /*              Rates                        */
 /* ==========================================*/
 .rates h2{
-  font-size: 4vw;
+  font-size: 1rem;
   font-weight: bold;
   width: 70%;
   text-align: center;
   margin: 2vw auto;
+}
+
+.rates p{
+  margin: 0 auto;
 }
 
 .season {
@@ -400,16 +467,16 @@ article figure {
 }
 
 .season .title h2{
-  height: 2em;
+  height: 2rem;
   width: 100%;
   margin: 0;
   text-align: center;
-  line-height: 2em;
+  line-height: 2rem;
   font-weight: bold;
 }
 
 .season .title p{
-  font-size: .5rem;
+  font-size: .8rem;
   font-weight: 400;
   font-style: italic;
   text-align: center;
@@ -418,10 +485,10 @@ article figure {
 }
 
 .season h3{
-  margin: 1em 1em;
+  margin: 1rem 1rem;
   text-align: center;
   vertical-align: middle;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -429,12 +496,13 @@ article figure {
   margin: 1px 10px;
   
 }
+
 .rateBox {
   padding-bottom: 10px; 
 }
 
 #contact p {
-  width:100%;
+  width: 100%;
   text-align: center;
   margin:0 auto;
 }
@@ -455,12 +523,13 @@ article figure {
   line-height: 1.5;
   text-align: center;
   height: 4vw;
-  line-height: 1.4;
-  font-size: 3vw;
+  line-height: 1.8;
+  font-size: 1.1rem;
 }
 
 .preFooter {
   background-color: $bgBrown; 
+  justify-content: center;
 }
 
 .footerBookNowContact {
@@ -470,18 +539,18 @@ article figure {
 
 #sectionContact .footerBookNowContact p{
   text-align: left;
-  line-height: 1.5;
-  font-size: 1vw;
+  line-height: 4.5;
+  font-size: .8rem;
   font-weight: 600;
-  height: 5vw;
+  height: 3vw;
 }
 
 .footerLogoContainer {
- justify-content: center; 
+  justify-content: center; 
 }
-s
+
 .footerLogoContainer .logo {
- padding: 3vw 4vw;
+  padding: 3vw 4vw;
 }
   
 .welcome {
@@ -489,8 +558,7 @@ s
   position: relative;
   top: -3vw;
   font-weight: 700;
-  font-size: 3vw;
-
+  font-size: 1.5rem;
 }
 
 /* ==========================================*/
@@ -508,7 +576,7 @@ footer div {
   background-color: $bgDarkBrown ;
   text-align:center;
   line-height: 2;
-  font-size: 3vw;
+  font-size: 1.5rem;
 }
 
 
@@ -521,7 +589,7 @@ footer div {
 
   
   footer div {
-    font-size: 1vw;
+    font-size: 1rem;
     height: 269px;
   }
 
@@ -529,12 +597,19 @@ footer div {
 }
 
 /* ==================== medium screens ========================== */
-@media only screen and (max-width:599px){
+@media only screen and (min-width:481px) and (max-width:599px){
 
+  .mainNav ul li:first-of-type {
+    width: 17%; 
+  }
+  
+  .mainNav ul li:last-of-type {
+    width: 17%; 
+  }
+  
 .mainNav li a{
-  font-weight: bold;
-  font-size:1vw;
-  height: 2vw;
+  font-weight: normal;
+  height: 5vw;
 }
 
   
@@ -546,12 +621,17 @@ footer div {
   .banner {
     flex-direction: column;
     margin: 0 auto;
+    width: 100%;
   }
 
   .banner div {
     display: flex;
     flex-direction: column;
     text-align: center;
+  }
+  
+  .banner div:first-of-type {
+    margin-top: 24px;
   }
   
   .logo img{
@@ -561,63 +641,72 @@ footer div {
   .email{
     margin-bottom: 7px;
   }
+  
+  .showThisBlock {
+    position: relative;
+    text-align: center;
+  }
 
+  .mainNav{
+    display:none;
+  }
+  
+  .top{
+   display:none; 
+  }
   .menuTop {
-    position:fixed;
-    top:0;
-    left:0;
-    
+    position: fixed;
+    top: 0;
+    left: 0;
   }
   
   .mobileMenu {
     display: block;
-    background-color: bisque;
-    text-align: right;
+    background-color: #ffc4c4;
+    text-align: center;
     font-weight: 700;
-    height: 8vw;
-    line-height: 1.3;
+    height: 47px;
+    line-height: 2.6;
     margin: 0;
     cursor: pointer;
     width: 100%;
-    padding-right: 7px;
     z-index: 30;
-
+    font-size: 1.4rem;
   }
   
-  .mainNav{
-    display: none;
-  }
-  
-  .mainNav{
-    top: 27px;
+  #mainUL{
+    top: 47px;;
     position: fixed;
     width: 100%;
     z-index: 30;
   }
   
-  .mainNav li{
-    width:100%;
+  #mainUL li{
+    width: 100%;
     line-height: 2;
     border-top: solid white 1px;
-    height: 35px;
+    height: 47px;
+    background-color: bisque;
   }
 
-  .mainNav li a{
-    width:100%;
-    line-height: 2;
-    height: 35px;
+  #mainUL li a{
+    width: 100%;
+    line-height: 3;
+    height: 47px;
+    text-decoration: none;
+    display: block;
+    color: $bgDarkBrown;
+    font-weight: 600;
   }
   
-  .subNav{
-    font-size: 6vw;
-    line-height: 1.4;
+  #mainUL li a:hover{
+    color: $bgLessDarkBrown; 
   }
+  
 
   // Amazing outdoor recreation oportunities
   .bgBrown{
-    font-size: calc(3vw/1.2);
-    height: 13vw;
-    line-height: 6vw;
+    font-size: .8rem;
   }
 
   .hotTub .posHotTubText {
@@ -627,29 +716,39 @@ footer div {
   }
   
   section p {
-    font-size: 3vw;
+    font-size: 1.2rem;
     margin: 0 5px;    
   }
   
   section h1 {
-    width:103%;
+    width:100%;
     padding-left: 0;
   }
   
   section h3 {
     line-height: 1.5;
     font-weight: 600;
-    font-size: 1.8vw;
+    font-size: 1rem;
     padding: 2vw 2vw;
+  }
+  
+  .flexRow .innerText {
+    margin:0; 
   }
   
   .flexRow .innerText h2 {
     font-weight: bold;
-    font-size: 5.5vw;
+    margin: 0 1rem;
   }
 
+  section.about p {
+    line-height: 1.5;
+    font-weight: normal;
+    padding: 2vw 2vw;
+  }
+  
   section.amenities article.flexRow {
-    margin: 4vw 0;
+    margin: 0 0;
     flex-direction: column-reverse;
     height: 400px;
   }
@@ -658,38 +757,57 @@ footer div {
     order: 2;
   }
   
+
   section.amenities article.flexRow:nth-of-type(1) {
-    height: 588px;
+    height: 420px;
   }
 
   section.amenities article.flexRow:nth-of-type(2) {
-    height: 475px;
+    height: 330px;
+    margin-top: 25px;
   }
-
+  
+  #private h2{
+    margin-bottom: -5rem;
+    margin-top: -2rem;
+  }
+  
+  #shared{
+     margin-bottom: 3rem; 
+  }
+  
+  #shared p{
+     margin-top: 1.5rem; 
+  }
+  
   section.amenities article.flexRow:nth-of-type(3) {
-    height: 640px;
+    height: 450px;
   }
   
   section.amenities article.flexRow .innerText p{
     line-height: 1.4;
   }
+
   
-  section.amenities article.flexRow:nth-of-type(1) .innerText {
-    margin-bottom: 40px;
+  #calendar-legend-box-booked,
+  #calendar-legend-box-available{
+    font-size: .8rem;
+    height: 34px;
+    line-height: 3;
+  }
+  .calendar .header {
+    width: 75%!important;
   }
   
-  section.amenities article.flexRow:nth-of-type(2) .innerText {
-    margin-bottom: 40px;
+  .calendar nav li a {
+    line-height: 2!important;
+    font-size: 1.3rem!important;
+  }
+  #currentYear {
+      font-size: 1rem!important; 
   }
 
-  section.amenities article.flexRow:nth-of-type(3) .innerText{
-    margin-bottom: 40px;
-  }
   
-  section.amenities article.flexRow:nth-of-type(3) .innerText h2{
-    margin-top: -20px;
-  }
-
   .season {
     width: 47%; 
   }
@@ -704,7 +822,8 @@ footer div {
 
   
   #sectionContact .footerBookNowContact p {
-    text-align: center; 
+    text-align: center;
+    margin-bottom: 5px;
   }
 
   #sectionContact p {
@@ -719,6 +838,12 @@ footer div {
   .logo {
     margin: 0 auto;
   }
+  
+}// end of max-width:480px 
+
+@media only screen and (max-width:320px){
+
+  html{max-width:320px;}
   
 }// end of max-width:320px 
 

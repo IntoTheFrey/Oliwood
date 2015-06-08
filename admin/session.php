@@ -1,12 +1,20 @@
 <?php
 
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
-//$connection = new mysqli('localhost', 'obfiscco_oliwood', 'LKwacl)qn)z9wc6a', 'obfiscco_oliwood');
-$connection = new mysqli('localhost', 'root', '', 'oliwood');
+/* local */    
+    $connection = new mysqli('localhost', 'root', '', 'oliwood');
+/* web */    
+    //$connection = new mysqli('localhost', 'obfiscco_oliwood', 'LKwacl)qn)z9wc6a', 'obfiscco_oliwood');
+    
+
 
 // Selecting Database
-//$db = mysqli_select_db ( $connection , "obfiscco_oliwood" );
+/* local */
 $db = mysqli_select_db ( $connection , "oliwood" );
+/* web */
+//$db = mysqli_select_db ( $connection , "obfiscco_oliwood" );
+
+
 session_start();// Starting Session
 
 // Storing Session

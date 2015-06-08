@@ -1,6 +1,7 @@
 <?php
-  include_once('../templates/headerAdmin.php');
   include_once('session.php');
+  include_once('../templates/headerAdmin.php');
+
   $pageID = "Profile Page";
 
 ?>
@@ -51,7 +52,7 @@ while($row = $results->fetch())
 {
   echo '<li id="item_'.$row["id"].'">';
   echo '<div class="del_wrapper"><a href="#" class="del_button" id="del-'.$row["id"].'">';
-  echo '<img src="../css/images/icon_del.gif" border="0" />';
+  echo '<div class="wrapDelete" title="Delete Booking"><img src="../css/images/icon_del.gif" alt="Delete Booking" title="Delete Booking" border="0" /></div>';
   echo '</a></div>';
   echo $row["id"].' '.$row["startDate"].' '.$row["endDate"].' <div class="liDivColor" style="background-color:'.$row["colour"].'"></div></li>';
 }

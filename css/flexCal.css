@@ -12,8 +12,10 @@ test {
 
 .calendar {
   max-width: 960px;
+/*
   background-color: floralwhite;
-  width: 100%;
+*/
+   width: 100%;
   font-size: 100%;
   font-family: Verdana,Arial,sans-serif;
   margin: 0 auto;
@@ -38,24 +40,48 @@ test {
   width: 100%;
   max-width: 750px;
   margin: 0 auto;
+  margin-top:10px;
 }
 
 .calendar nav {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
   display:flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-flex-wrap:wrap;
+  -ms-flex-wrap:wrap;
   flex-wrap:wrap;
   max-width: 960px;
 }
 
 .calendar nav ul {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
   display:flex;
 }
 
 .calendar .rowYear{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   max-width: 960px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -74,11 +100,17 @@ test {
 }
 
 .calendar #month1 {
+ -webkit-box-pack: end;
+ -webkit-justify-content: flex-end;
+ -ms-flex-pack: end;
  justify-content: flex-end;
   width:282px;
 }
 
 .calendar #month2 {
+ -webkit-box-pack: start;
+ -webkit-justify-content: flex-start;
+ -ms-flex-pack: start;
  justify-content: flex-start; 
   width:282px;
 }
@@ -101,8 +133,9 @@ test {
   min-width: 40px;
   border-radius: 30px;
   text-align: center;
-  line-height: 2.4; 
+  line-height: 1.7;
   cursor: pointer;
+  font-size: 1rem;
   
 }
 
@@ -117,27 +150,44 @@ test {
 
 .calendar nav a {
   text-decoration: none;
-  color: black;
+  color: rgba(60,49,41,1);
 }
 
 #currentYear {
   display: block;
   height: 12px;
-  font-size: .8rem;
+  font-size: .6rem;
+  margin-bottom: .3vw;
 }
 
 .curMonth {
-  background-color: #facf97;
+  background-color: #facf97!important;
 }
 
 .monthHeader {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
   display:flex; 
+  -webkit-box-pack: center; 
+  -webkit-justify-content: center; 
+  -ms-flex-pack: center; 
   justify-content: center;
 }
 
 div.weekdayHeading {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   width: 20%;
   line-height: 1.5;
@@ -146,33 +196,58 @@ div.weekdayHeading {
   background-color: ivory;
 */
   width:100px;
-  height:25px;
   max-width: 100px;
   width:100%;
 }
 
 #demo {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
   display:flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  margin: 0 auto;
-  max-width: 750px;
   width:100%;
   min-height: 460px;  
+/*
   background-color: floralwhite;
+*/
 
 }
 
 
 .week {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
   display:flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 
 div.day, div.pday {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
   display:flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;  
   margin-right: 1px;
   margin-bottom: 1px;
@@ -185,7 +260,7 @@ div.day, div.pday {
   margin-right: 1px;
   margin-bottom: 1px;
   max-width: 100px;
-  font-size: 1.3vw;
+  font-size: 1rem;
 }
 
 div.pday{
@@ -207,7 +282,14 @@ div.today div.dayContainer::after {
 }
 
 .dayContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
 }
@@ -223,38 +305,71 @@ section {
 
 
 #year1 {
+ -webkit-box-ordinal-group:1;
+ -webkit-order:0;
+ -ms-flex-order:0;
  order:0; 
 }
 #year2 {
+ -webkit-box-ordinal-group:2;
+ -webkit-order:1;
+ -ms-flex-order:1;
  order:1; 
 }
 #month1 {
+ -webkit-box-ordinal-group:3;
+ -webkit-order:2;
+ -ms-flex-order:2;
  order:2; 
 }
 #month2 {
+ -webkit-box-ordinal-group:4;
+ -webkit-order:3;
+ -ms-flex-order:3;
  order:3; 
 }
 
 
 footer p{
-  
-  
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: .8rem;  
 }
 
 @media only screen and (max-width:563px){
   
   #year1 {
+   -webkit-box-ordinal-group:1;
+   -webkit-order:0;
+   -ms-flex-order:0;
    order:0; 
   }
   #year2 {
+   -webkit-box-ordinal-group:3;
+   -webkit-order:2;
+   -ms-flex-order:2;
    order:2; 
   }
   #month1 {
+   -webkit-box-ordinal-group:2;
+   -webkit-order:1;
+   -ms-flex-order:1;
    order:1; 
   }
   #month2 {
+   -webkit-box-ordinal-group:4;
+   -webkit-order:3;
+   -ms-flex-order:3;
    order:3; 
   }
-
+  
 }
+
+
 

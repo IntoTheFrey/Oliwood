@@ -1,6 +1,4 @@
 <?php
-//include db session and configuration files
-include_once('admin/session.php');
 include_once('admin/config.php');
 ?>
   

@@ -1,9 +1,6 @@
 <?php
-$hostname = "localhost"; //hostname
-$username = "root"; //mysql username
-$password = ""; //mysql password
-$databasename = 'oliwood'; //databasename
-$tablename = 'bookings';
+include_once('local.php');
+//include_once('web.php');
 
 $connectionStr = 'mysql:host='.$hostname.';dbname='.$databasename.'';   
 $driverOptions = array();    
