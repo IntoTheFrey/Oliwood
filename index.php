@@ -81,6 +81,8 @@
         </div>
         <figure class="flex flexColumn flexSpaceAround">
           <img src="img/MKitch1.jpg">
+          <img src="img/MKitch1.jpg">
+          <img src="img/MKitch1.jpg">
         </figure>
       </article>
 
