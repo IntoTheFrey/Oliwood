@@ -1,7 +1,7 @@
 
 
   <footer>
-      <p>&copy; <?php echo date('Y'); ?> Brenna Boucher & Russell Erdos</p>
+      <p>Website by Russell Erdos & Brenna Boucher &copy; <?php echo date('Y'); ?> </p>
   </footer>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

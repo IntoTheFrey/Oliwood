@@ -27,14 +27,16 @@ $max_font: 22;
 /* ==========================================*/
 
 //$font-main: normal 400 1vw/1.5 "Open Sans", sans-serif;
-$font-main: normal 400 1vw/1.5 "Open Sans", sans-serif;
-$bullet: "\2022";
+$font-main: 'Lato', sans-serif;
+
+$bulletoh: "\2027";
+$bullet: "\2023";
 $bgBrown: #d9d2bb;
 $subNavColor: #dce5df;
 
 $bgTan: #eaeadd;
 $bgDarkBrown: #3c3129;
-$bgLessDarkBrown: #3c3129;
+$bgLessDarkBrown: rgba(60, 49, 41, 0.82);
 
 /* ==========================================*/
 /*              End SASS Variables           */
@@ -69,7 +71,8 @@ $bgLessDarkBrown: #3c3129;
 
 
 html{
-  font: $font-main;
+  font-family: $font-main;
+  font-weight: 700;
   color: $bgDarkBrown;
 /*
   font-size: 100%;
@@ -154,8 +157,8 @@ body{
 }
 
 .bookNowContact{
-  font-size: .8rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 900;
   margin: 0 8vw;
   justify-content: center;
 }
@@ -165,7 +168,7 @@ body{
 }
 
 .email{
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 /* ==========================================*/
@@ -203,7 +206,7 @@ body{
 .mainNav li a{
   display: flex;
   flex-direction: column;
-  font-weight: bold;
+  font-weight: 900;
   font-size: .8rem;
   height: 3vw;
   color: rgba(60,49,41,1);
@@ -246,7 +249,7 @@ body{
 .whiteImgOverText{
   font-size: 1.2rem;
   line-height: 1.6em;
-  font-weight: bold;
+  font-weight: 900;
   color: white;
   position: relative;
   top: -32vw;
@@ -255,6 +258,9 @@ body{
   width: 75vw;
 }
 
+.bulletoh::before{  
+  content: $bulletoh;
+}
 .heroBullet::before{  
   content: $bullet;
 }
@@ -270,32 +276,38 @@ body{
 // headings for each section
 .subNav{
   width: 100%;
-  font-family: $font-main;
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 900;
   height: 1.98rem;
   background-color: $subNavColor;
   text-align: center;
   text-transform: uppercase;
-  line-height: 1.3;
 }
 
 
- .top img{
+
+ .top img {
   height: 2.5vw;
-  float: left;
-  margin: 5px 0;
+  margin: 5px;
+  transform:rotate(90deg);
 }
 
 
 .top{
-  display: flex;
-  flex-direction: row;
   font-size: 1rem;
   height: 0;
+  width:50%;
   text-transform: capitalize;
   text-decoration: none;
   color: $bgDarkBrown;
+}
+
+.left {
+ float: left; 
+}
+.right {
+ float: right; 
 }
 
 .top a:hover,
@@ -309,12 +321,15 @@ body{
 .bgBrown{
   background-color: $bgBrown;
   font-size: 1.2rem;
-  height: 5vw;
+  line-height: 1.6;
+/*
   line-height: 4.7vw;
+*/
 }
 
 section h1{
-  font-weight: bold;
+  font-size: 1.7rem;
+  font-weight: 900;
   margin: 0 auto;
   padding: 0 1.8vw;
   width: 100%;
@@ -328,7 +343,7 @@ section h1:first-of-type{
 
 section.about p{
   line-height: 1.5;
-  font-weight: 600;
+  font-weight: 900;
   font-size: 1rem;
   padding: 2vw 2vw;
 }
@@ -354,17 +369,17 @@ section h1:last-of-type{
 /* ==========================================*/
 
 .flexRow .innerText h2{
-  font-weight: bold;
+  font-weight: 900;
   margin: 0 2vw;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: left;
-  margin: 1rem 1rem;
+  margin: .5rem 1rem;
 }
 
 .flexRow .innerText p{
-  line-height: 1.4;
-  font-size: 1rem; 
-  font-weight: 600;
+  line-height: 1.5;
+  font-size: .8rem; 
+  font-weight: 900;
   margin: .5rem 1rem;
   max-width: 100%;
 }
@@ -376,6 +391,7 @@ article.flexRow{
 article .innerText{
   flex:1 1 0;
   margin: 1rem 0;
+  max-width:38.2%;
 }
 
 article figure {
@@ -386,6 +402,78 @@ article figure {
 /*              End Facilities & Amenities   */
 /* ==========================================*/
 
+
+#slider1, #slider2, #slider3 {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  width:5000px;
+}
+
+#slider3 {
+  margin: 20px auto 20px auto;
+}
+
+#slider1 .slider-magazine,
+#slider2 .slider-magazine,
+#slider3 .slider-magazine{
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+#slider1 .slider-magazine img,
+#slider2 .slider-magazine img,
+#slider3 .slider-magazine img{
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 47vw;
+/*
+  width: 47vw;
+*/
+  height: 400px;
+  background: #fff;
+}
+
+.control_prev, .control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 29;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #FFF;
+  color: grey;
+  font-weight: 900;
+  font-size: 58px;
+  opacity: .5;
+  cursor: pointer;
+  line-height: .4;
+}
+
+.control_prev:hover, .control_next:hover {
+  opacity: .6;
+  -webkit-transition: all 0.2s ease;
+}
+
+.control_prev {
+  border-radius: 70px;
+}
+
+.control_next {
+  right: 0;
+  border-radius: 70px;
+}
+
+
+
+
+
+
 /* ==========================================*/
 /*              Location                     */
 /* ==========================================*/
@@ -393,9 +481,7 @@ article figure {
 
 .googlemap{
   display:flex;
-  height: 96%;
-  justify-content: center;
-  margin:0 auto;
+  margin: 2vw auto;
 }
 
 /* ==========================================*/
@@ -406,6 +492,15 @@ article figure {
   width:100%;
   margin-top:20px; 
 }
+
+  section h3 {
+    line-height: 1.5;
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin: 2vw auto;
+    max-width:87%;
+  }
+
 
 figure img {
   width:100%;
@@ -445,21 +540,28 @@ figure img {
 /* ==========================================*/
 /*              Rates                        */
 /* ==========================================*/
+
 .rates h2{
-  font-size: 1rem;
-  font-weight: bold;
-  width: 70%;
-  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 900;
+  width: 76vw;
   margin: 2vw auto;
+  text-align: center;
 }
 
 .rates p{
   margin: 0 auto;
 }
 
+.rates p:only-of-type {
+  width: 76vw;
+  text-align: center;
+}
+
 .season {
   background-color: $bgTan;
   width: 45%;
+  margin: 3vw 0;
 }
 
 .season .title{
@@ -472,7 +574,7 @@ figure img {
   margin: 0;
   text-align: center;
   line-height: 2rem;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .season .title p{
@@ -480,6 +582,7 @@ figure img {
   font-weight: 400;
   font-style: italic;
   text-align: center;
+  width: 100%;
   margin: 0 0 8px 0;
   padding: 0;
 }
@@ -489,16 +592,16 @@ figure img {
   text-align: center;
   vertical-align: middle;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 900;
 }
 
 .season p{
-  margin: 1px 10px;
-  
+  margin: 1px 4vw;
+  font-size: .8rem;  
 }
 
 .rateBox {
-  padding-bottom: 10px; 
+  padding-bottom: 15px; 
 }
 
 #contact p {
@@ -534,14 +637,13 @@ figure img {
 
 .footerBookNowContact {
   justify-content: center;
-  margin: 0 4vw;
+  margin: 0 4vw 2vw 4vw;
 }
 
 #sectionContact .footerBookNowContact p{
   text-align: left;
   line-height: 4.5;
-  font-size: .8rem;
-  font-weight: 600;
+  font-weight: 900;
   height: 3vw;
 }
 
@@ -570,13 +672,13 @@ figure img {
 /* ==========================================*/
 
 
-footer div {
+footer {
   color: antiquewhite;
-  height: 33px;
   background-color: $bgDarkBrown ;
   text-align:center;
-  line-height: 2;
-  font-size: 1.5rem;
+  height: 33px;
+  font-size: 1.3rem;
+  line-height: 3;
 }
 
 
@@ -588,9 +690,9 @@ footer div {
 @media only screen and (max-width:2800px){
 
   
-  footer div {
+  footer {
     font-size: 1rem;
-    height: 269px;
+    height: 3rem;
   }
 
   
@@ -607,13 +709,22 @@ footer div {
     width: 17%; 
   }
   
-.mainNav li a{
-  font-weight: normal;
-  height: 5vw;
+  .mainNav li a{
+    font-weight: 400;
+    height: 5vw;
+  }
+
+  #slider1 .slider-magazine img,
+  #slider2 .slider-magazine img,
+  #slider3 .slider-magazine img{
+    width: 62vw;
+    height: 220px; 
+
+  }
+
 }
 
-  
-}
+
 /* ==================== tiny screens ========================== */
 
 @media only screen and (max-width:480px){
@@ -696,7 +807,7 @@ footer div {
     text-decoration: none;
     display: block;
     color: $bgDarkBrown;
-    font-weight: 600;
+    font-weight: 900;
   }
   
   #mainUL li a:hover{
@@ -706,7 +817,9 @@ footer div {
 
   // Amazing outdoor recreation oportunities
   .bgBrown{
-    font-size: .8rem;
+    font-size: 1rem;
+    line-height: 2;
+
   }
 
   .hotTub .posHotTubText {
@@ -716,34 +829,56 @@ footer div {
   }
   
   section p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0 5px;    
   }
   
   section h1 {
     width:100%;
     padding-left: 0;
+    font-size: 1.2rem;
   }
   
   section h3 {
     line-height: 1.5;
-    font-weight: 600;
+    font-weight: 900;
     font-size: 1rem;
     padding: 2vw 2vw;
   }
-  
-  .flexRow .innerText {
-    margin:0; 
+
+  section h3 {
+    line-height: 1.5;
+    font-weight: 900;
+    font-size: 1rem;
+    margin: 2vw auto;
   }
   
+  .flexRow .innerText {
+    margin:0 auto;
+    width:90%;
+    max-width:90%;
+  }
+
   .flexRow .innerText h2 {
-    font-weight: bold;
+    font-weight: 900;
     margin: 0 1rem;
   }
 
+  #slider1 .slider-magazine img,
+  #slider2 .slider-magazine img,
+  #slider3 .slider-magazine img{
+    float: left;
+    width:270px;
+    height: 180px;
+  }
+
+  .control_prev, .control_next {
+    font-size: 40px;
+  }
+  
   section.about p {
     line-height: 1.5;
-    font-weight: normal;
+    font-weight: 400;
     padding: 2vw 2vw;
   }
   
@@ -813,7 +948,7 @@ footer div {
   }
   
   .season p {
-    margin: 1px 5px; 
+    margin: 1px 22px; 
   }
 
   .season h3 {

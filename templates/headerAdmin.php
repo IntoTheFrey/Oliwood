@@ -16,6 +16,7 @@ include_once('connect.php');
     <meta name="description" content="Test flex">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/resets.css">

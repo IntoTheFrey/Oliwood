@@ -3,16 +3,9 @@
 CSS Settings For HTML Div ExactCenter
 ------------------------------------------------*/
 
-#main {
-/*
-  width:960px;
-  margin:50px auto;
-  font-family:raleway
-*/
-}
-
-span {
- color: #5a4444;
+.rateBox p span {
+  display: block;
+  text-align: center;
 }
 
 h2 {

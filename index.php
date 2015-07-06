@@ -39,21 +39,23 @@
       <img src="img/TurtleFromEast.jpg">
       <div class="whiteImgOverText">
         <div>Private Mountain Retreat</div>
-        <div class="heroBullet">Sleeps up to 10</div>
-        <div class="heroBullet">Large Hot Tub</div>
-        <div class="heroBullet">Cable & WiFi</div>
+        <div class="heroBullet"> Sleeps up to 10</div>
+        <div class="heroBullet"> Large Hot Tub</div>
+        <div class="heroBullet"> Cable & WiFi</div>
       </div>
     </section>
     
     <section class="about">
       <div class="subNav" id="about">
-        <a href="#home" class="top"><img  src="img/upa.svg"/>Top</a>About</div>
+        <a href="#home" class="top"><img class="left" src="img/arrow_to_left.svg"/></a>About
+        <a href="#home" class="top"><img class="right" src="img/arrow_to_left.svg"/></a>
+      </div>
 
       <h1>Comfortable mountainside cottage with incredible views of the Crowsnest Pass!</h1>
       <p>Enjoy all the Crowsnest Pass has to offer! Spring, summer, fall or winter there is always something to do in this fantastic area: hiking, quad-riding, bird watching, golfing, and the best fly fishing in the world. In winter, alpine, cross-country skiing, and snowmobiling. The house is cozy in winter with in-floor hot water heating. After a day of play in the great outdoors, curl up in front of the gas fireplace with a hot cocoa or languish in the luxurious hot-tub. It is located on the morning side of Turtle Mountain in the beautiful Crowsnest Pass.</p>
 
       <div class="subNav bgBrown">Amazing outdoor recreation opportunities</div>
-      <h1>Skiing &bull; Skidooing &bull; Hiking &bull; Birdwatching</h1>
+      <h1>Skiing <span class="bulletoh"></span> Skidooing <span class="bulletoh"></span> Hiking <span class="bulletoh"></span> Birdwatching</h1>
 
       <div class="hotTub">
         <img class="imgAbout" src="img/Hottub1.jpg"/>
@@ -68,7 +70,8 @@
     
     <section class="amenities">
       <div class="subNav" id="amenities">
-        <a href="#home" class="top"><img  src="img/upa.svg"/>Top</a>Facilities & Amenities
+        <a href="#home" class="top"><img class="left" src="img/arrow_to_left.svg"/></a>Facilities & Amenities
+        <a href="#home" class="top"><img class="right" src="img/arrow_to_left.svg"/></a>
       </div>
 
       <article class="flex flexRow">
@@ -79,16 +82,26 @@
           <h2>Laundry</h2>
           <p>Equipped with a washer, dryer and drying rack.</p>
         </div>
-        <figure class="flex flexColumn flexSpaceAround">
-          <img src="img/MKitch1.jpg">
-          <img src="img/MKitch1.jpg">
-          <img src="img/MKitch1.jpg">
+        <figure id="slider1" class="flex flexColumn flexSpaceAround">
+          <div class="control_next">></div>
+          <div class="control_prev"><</div>
+          <div class="slider-magazine">
+            <img src="img/MKitch1.jpg" />
+            <img src="img/MDine1.jpg" />
+            <img src="img/MLiving.jpg" />
+          </div>
         </figure>
       </article>
 
       <article class="flex flexRow">
-        <figure class="flex flexColumn flexSpaceAround">
-          <img src="img/MBed1.jpg">
+        <figure id="slider2" class="flex flexColumn flexSpaceAround">
+          <div class="control_next">></div>
+          <div class="control_prev"><</div>
+          <div class="slider-magazine">
+            <img src="img/MBed1.jpg">
+            <img src="img/MBed2.jpg">
+            <img src="img/MBed3.jpg">
+          </div>
         </figure>
         <div id="private" class="innerText flex flexColumn flexSpaceAround">
             <h2>Private Rooms</h2>
@@ -102,8 +115,13 @@
           <p>Comfortable living and dining room areas, as well as a large sunny deck with seating for entertaining and eating.</p>
           <p>Oliwood is suitable for sewing or quilting work-shops, artists, book clubs, star-gazers, or family get-togethers (with lots of room for campers), or those who simply wish a solitary retreat in the mountains.</p>
         </div>
-        <figure class="flex flexColumn flexSpaceAround">
+        <figure id="slider3" class="flex flexColumn flexSpaceAround">
+          <div class="control_next">></div>
+          <div class="control_prev"><</div>
+          <div class="slider-magazine">
           <img src="img/MDeck1.png">
+          <img src="img/MDine1.jpg">
+          <img src="img/Hottub1.jpg">
         </figure>
       </article>
       
@@ -111,18 +129,22 @@
     
     <section>
       <div class="subNav" id="location">
-        <a href="#home" class="top"><img  src="img/upa.svg"/>Top</a>Location
+        <a href="#home" class="top"><img class="left" src="img/arrow_to_left.svg"/></a>Location
+        <a href="#home" class="top"><img class="right" src="img/arrow_to_left.svg"/></a>
       </div>
       <h3>Oliwood is located on the morning side of Turtle Mountain in the beautiful Crowsnest Pass, of Alberta's Rocky Mountains.</h3>
 
-      <iframe class="googlemap" src="https://www.google.com/maps/embed?pb=!1m25!1m8!1m3!1d20696.740037265277!2d-114.379813!3d49.577144!3m2!1i1024!2i768!4f13.1!4m14!1i0!3e0!4m3!3m2!1d49.5844959!2d-114.37593749999999!4m3!3m2!1d49.5697993!2d-114.385269!4m3!3m2!1d49.569812999999996!2d-114.3853194!5e0!3m2!1sen!2sca!4v1426133566552" width="70%" height="450" frameborder="0" style="border:0"></iframe>
-
+      <iframe class="googlemap" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d8861.720540773886!2d-114.3780343!3d49.5775526!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sca!4v1433952375754" width="840" height="560" frameborder="0" style="border:0"></iframe>
+      
+<!--
       <img class="imgAbout" src="img/Winter.jpg"/>
+-->
     </section>
     
     <section class="calendar">
       <div class="subNav" id="calendar">
-        <a href="#home" class="top"><img  src="img/upa.svg"/>Top</a>Availability
+        <a href="#home" class="top"><img class="left" src="img/arrow_to_left.svg"/></a>Availability
+        <a href="#home" class="top"><img class="right" src="img/arrow_to_left.svg"/></a>
       </div>
       <div id="calendar-legend"><div id="calendar-legend-box-booked">Booked</div><div id="calendar-legend-box-available">Available</div></div>
       
@@ -131,7 +153,8 @@
     
     <section class="rates">
       <div class="subNav" id="rates">
-        <a href="#home" class="top"><img  src="img/upa.svg"/>Top</a>Rates
+        <a href="#home" class="top"><img class="left" src="img/arrow_to_left.svg"/></a>Rates
+        <a href="#home" class="top"><img class="right" src="img/arrow_to_left.svg"/></a>
       </div>      
       <h2>Prices include Taxes. Minimum 2 night stay. Maximum 10 people.</h2>
       <p>We accept both Visa and Mastercard. Check back for updates. Prices subject to change.</p>
@@ -147,7 +170,7 @@
             <p>$35.00 each additional person</p>
             <h3>WEEKLY:</h3>
             <p>$900.00 per week double occupancy</p>
-            <p>$$210.00 each additional person</p>
+            <p>$210.00 each additional person</p>
             <p><span>(1 free night)</span></p>
           </div>
         </div>
@@ -170,7 +193,8 @@
     </section>
     <section id="sectionContact">
       <div class="subNav" id="contact">
-        <a href="#home" class="top"><img  src="img/upa.svg"/>Top</a>Contact Us
+        <a href="#home" class="top"><img class="left" src="img/arrow_to_left.svg"/></a>Contact Us
+        <a href="#home" class="top"><img class="right" src="img/arrow_to_left.svg"/></a>
       </div>
       <p>Call or email to make your reservations.</p>
       <div class="preFooter flex flexRow">

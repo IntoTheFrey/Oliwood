@@ -66,4 +66,79 @@ $topButton.click(function(e){
 });
 
   
+  
+  // sliders
+  var sliders = $('figure[id^="slider"]');
+
+  sliders.each( function(){
+
+    var $thisSlider = $(this);
+    var $sliderMagazine = $thisSlider.find('.slider-magazine');
+    var $sliderMagazineLastImage = $thisSlider.find('.slider-magazine img:last-of-type');
+
+    var $images = $thisSlider.find('.slider-magazine img');
+
+    var slideCount = $images.length;
+	var slideWidth = $images.width();
+    
+	var slideHeight = $images.height();
+	var sliderMagazineWidth = slideCount * slideWidth * 2;
+
+    $thisSlider.css({ width: slideWidth, height: slideHeight });
+	$sliderMagazine.css({ width: sliderMagazineWidth, marginLeft: - slideWidth });
+    $sliderMagazineLastImage.prependTo($sliderMagazine);
+  
+  });
+  
+	
+//	$('#slider1').css({ width: slideWidth, height: slideHeight });
+//	$('#slider1 .slider-magazine').css({ width: sliderUlWidth, marginLeft: - slideWidth });	
+//  $('#slider1 .slider-magazine img:last-of-type').prependTo('#slider1 .slider-magazine');
+
+    function moveLeft(id) {
+
+      var $thisSlider = $("#" + id);
+      var $sliderMagazine = $thisSlider.find('.slider-magazine');
+      var $sliderMagazineLastImage = $thisSlider.find('.slider-magazine img:last-of-type');
+      var $images = $thisSlider.find('.slider-magazine img');
+      var slideWidth = $images.width();
+
+      $($sliderMagazine).animate({
+          left: + slideWidth
+      }, 800, function () {
+        $sliderMagazineLastImage.prependTo($sliderMagazine);
+        $sliderMagazine.css('left','');
+
+
+      });
+    };
+
+    function moveRight(id) {
+
+      var $thisSlider = $("#" + id);
+      var $sliderMagazine = $thisSlider.find('.slider-magazine');
+      var $sliderMagazineFirstImage = $thisSlider.find('.slider-magazine img:first-of-type');
+      var $images = $thisSlider.find('.slider-magazine img');
+      var slideWidth = $images.width();
+      
+      $sliderMagazine.animate({
+            left: - slideWidth
+        }, 800, function () {
+          $sliderMagazineFirstImage.appendTo($sliderMagazine);
+          $sliderMagazine.css('left', '');
+        });
+    };
+
+  
+    $('.control_prev').click(function () {
+      var sliderID = $(this).parent().attr("id");
+      moveLeft(sliderID);
+    });
+
+    $('.control_next').click(function () {
+      var sliderID = $(this).parent().attr("id");
+      moveRight(sliderID);
+    });
+  
+  
 });
